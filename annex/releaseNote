@@ -1,0 +1,65 @@
+ACCES PATH FOR MATH :
+
+	- src/2d_tools.c		Tool box for 2D space / referencial related
+	- src/collision.c		SAT and AABB
+	- src/game_collision.c	Use of SAT for game logic
+
+	- src/draw.c:54			personalized star creating process
+
+	- at the beginning of src/player.c src/mother_ship.c src/mine.c
+		there is the creation of the game object
+
+	- src/player.c:275 iterial move for player
+
+THE GAME :
+
+- Starting Screen
+	- all key display
+	- choice for two player
+
+- HUD :-Score
+       - Life for both players
+	   - AABB can be shown
+	   - The second player can be added at any time
+	   - Backgroud and foreground
+
+- Game pause
+
+- Game Over :  - Player1 (and Player2) life is 0
+
+- 1 or 2 Players :  
+			   - Can move forward and rotate according to Newton equation
+               - Score increase when ennemis died
+			   - Player lose 1 life when hit by a mine or a bullet and is teleported randomly
+               - A player can shoot only 10 bullets at the same time
+               - Player and enemys bullets can hit each other
+			   - Can teleport randomly
+			   - Teleport with border
+
+			   - (a part of the player is displayed when at a border, as its just the continuity of the space)
+
+- Enemies :    - 4 types of mine, floating, magnetic, fireball and magnetic-fireball
+			   - The magnetic mines move in the direction of the player (only player 1)
+			   - The fireball mines shoot in direction of the player when hit by players bullet (direction of player 1)
+			   - the non-magnetic mines move in a random direction
+			   - Teleport with border
+			   - When all mine are defeated a new waves spawn with more difficulty 
+			   - Mine spawned on 'spawnpoint' bring by a mother ship animated at the start of any level
+			   - When a Mine is destroyed, 2 smaller appear on spawpoint, they are 3 different size
+
+
+TO BUILD AND RUN PROJECT :
+
+	- Build : "make"
+
+	- Run : "./bin/minestorm.exe"
+
+BUGS :
+
+	- Sometimes when exiting the game or restarting in specific case, a invalid free happen
+
+ENDNOTE :
+
+	- The code is not finished decomposed, so there is some long functions
+
+
